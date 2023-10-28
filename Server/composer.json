@@ -1,0 +1,5 @@
+{
+    "require": {
+        "evilfreelancer/routeros-api-php": "^1.4"
+    }
+}

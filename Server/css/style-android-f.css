@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main_menu a{
+	padding-top:13px;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #0A6A7E;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height:25px;
+	color: #00527A;
+	font-weight:bold;
+	display:block;
+	text-align:center;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#left_nav{
+	height: 38px;
+	width: 143px;
+	background-image:url(../imagenes/nav_bg.png);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #0A6A7E;
+}
