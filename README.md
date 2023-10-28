@@ -1,5 +1,5 @@
 # WIFI_Lissener
-Use a smool Mikrotik dual band to lissen AP close and give basic information, this is for fast test of Home CPEs like ONTs or Cable modems
+Use a small Mikrotik dual band to lissen AP close and give basic information, this is for fast test of Home CPEs like ONTs or Cable modems
 
 # Server side:
 This can run on a small virtualized server with basic linux, only install MySQL and PHP, I use same PHP to create a web server, install Daemonize with "apt install daemonize" command line if you install Debian,
