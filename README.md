@@ -15,7 +15,7 @@ The scripts from "root" folder place it to "/root" and fill crontab with this li
 
 */1 * * * *  /usr/sbin/daemonize /usr/bin/php -S 0.0.0.0:80 -t /var/www/html/
 
-* */1 * * *  /usr/sbin/ntpdate pool.ntp.org
+\* */1 * * *  /usr/sbin/ntpdate pool.ntp.org
 
 17 12 * * *  /usr/bin/bash /root/mata.sh
 
@@ -29,5 +29,5 @@ The scripts from "root" folder place it to "/root" and fill crontab with this li
 
 10 12 * * *  mysql -u dbuser -ppassword -D teccam -e "TRUNCATE TABLE teccam.wifi_5"
 
-* 2 * * *  /usr/sbin/reboot
+\* 2 * * *  /usr/sbin/reboot
 "
