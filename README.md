@@ -19,13 +19,13 @@ The scripts from "root" folder place it to "/root" and fill crontab with this li
 
 30 19 * * *  /usr/bin/bash /root/mata.sh
 
-*/1 * * * *  mysql -u jlvillaronga -ppassword -D teccam -e "DELETE FROM teccam.wifi_2 WHERE w2_fecha < (NOW() - INTERVAL 1 MINUTE)"
+*/1 * * * *  mysql -u dbuser -ppassword -D teccam -e "DELETE FROM teccam.wifi_2 WHERE w2_fecha < (NOW() - INTERVAL 1 MINUTE)"
 
-*/1 * * * *  mysql -u jlvillaronga -ppassword -D teccam -e "DELETE FROM teccam.wifi_5 WHERE w2_fecha < (NOW() - INTERVAL 1 MINUTE)"
+*/1 * * * *  mysql -u dbuser -ppassword -D teccam -e "DELETE FROM teccam.wifi_5 WHERE w2_fecha < (NOW() - INTERVAL 1 MINUTE)"
 
-10 12 * * *  mysql -u jlvillaronga -ppassword -D teccam -e "TRUNCATE TABLE teccam.wifi_2"
+10 12 * * *  mysql -u dbuser -ppassword -D teccam -e "TRUNCATE TABLE teccam.wifi_2"
 
-10 12 * * *  mysql -u jlvillaronga -ppassword -D teccam -e "TRUNCATE TABLE teccam.wifi_5"
+10 12 * * *  mysql -u dbuser -ppassword -D teccam -e "TRUNCATE TABLE teccam.wifi_5"
 
 * 2 * * *  /usr/sbin/reboot
 "
