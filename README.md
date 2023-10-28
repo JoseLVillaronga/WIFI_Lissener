@@ -4,6 +4,8 @@ Use a smool Mikrotik dual band to lissen AP close and give basic information, th
 # Server side:
 This can run on a small virtualized server with basic linux, only install MySQL and PHP, I use same PHP to create a web server, install Daemonize with "apt install daemonize" command line if you install Debian,
 The scripts from "root" folder place it to "/root" and fill crontab with this lines and replace "password" for MySQL password,
+
+
 "
 */30 * * * *    /usr/sbin/ntpdate pool.ntp.org
 
