@@ -5,9 +5,6 @@
  */
     class Conexion
     {
-        //constantes para la conexion
-        Static $user   = 'db_user';
-        static $password     = 'db_password';
         //declaramos estática para que se acceda esta propiedad directamente desde el objeto
         static $link;
         
@@ -21,9 +18,12 @@
      */
         static function conectar(){
             try {
-                self::$link = new PDO("mysql:host=127.0.0.1;port=3306;dbname=teccam;charset=utf8", self::$user, self::$password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+                self::$link = new PDO($_SESSION['DB_CONNECTION'].":host=".$_SESSION['DB_HOST'].";port=".$_SESSION['DB_PORT'].";dbname=".$_SESSION['DB_DATABASE'].";charset=utf8", 
+		    $_SESSION['DB_USERNAME'], 
+		    $_SESSION['DB_PASSWORD'], 
+		    array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
+		);
                 /*** nos conectamos ***/
-                //echo 'conectado a mysql <br />'; 
                 return self::$link;
             }
             catch(PDOException $e)

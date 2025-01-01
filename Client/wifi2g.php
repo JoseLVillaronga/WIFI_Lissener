@@ -2,11 +2,6 @@
 require_once 'config.php';
 $search=str_replace("'", "", preg_replace('([^A-Za-z0-9\-\_\ ])', '', str_replace("+", " ", $_GET['search'])));
 $res=json_decode(file_get_contents("http://['Server IP']/wifi2.php?search=".str_replace(" ", "+", $search)),true);
-//$query="SELECT * FROM cdr.wifi_2 WHERE address IS NOT NULL AND w2_fecha > (NOW() - INTERVAL 30 SECOND) ORDER BY w2_id DESC";
-//$res=Db::listar($query);
-//echo "<pre>";
-//print_r($res);
-//echo "</pre>";
 ?>
 <!doctype html>
 <html lang="en">

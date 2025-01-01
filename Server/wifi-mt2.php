@@ -1,6 +1,7 @@
 <?php
-require_once '/var/www/html/vendor/autoload.php';
-require_once '/var/www/html/clases/Conexion.php';
+require_once 'config.php';
+require_once 'vendor/autoload.php';
+require_once 'clases/Conexion.php';
 
 error_reporting(E_ALL);
 
@@ -9,9 +10,9 @@ use RouterOS\Query;
 
 $client = new Client([
     'timeout' => 1,
-    'host'    => 'Mikrotik IP',
-    'user'    => 'admin',
-    'pass'    => 'password'
+    'host'    => $_SESSION['MK_IP'],
+    'user'    => $_SESSION['MK_USER'],
+    'pass'    => $_SESSION['MK_PASSWORD']
 ]);
 
 /*
@@ -79,16 +80,7 @@ if(count($arr)>0){
 	$stmt->execute();
 	$errorSql = $stmt->errorInfo();
 }
-/*
-$res=json_encode(array_filter($arr));
-//exec("echo ".$res." > /var/www/html/wifi.txt");
-$file = fopen("/var/www/html/wifi.txt", "w");
-fwrite($file, $res);
-fclose($file);
-*/
 print_r($arr);
 echo "\n";
 print_r($errorSql);
 echo "\n";
-//echo $query;
-//echo "\n";

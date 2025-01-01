@@ -1,6 +1,7 @@
 <?php
-require_once '/var/www/html/vendor/autoload.php';
-require_once '/var/www/html/clases/Conexion.php';
+require_once 'config.php';
+require_once 'vendor/autoload.php';
+require_once 'clases/Conexion.php';
 
 error_reporting(E_ALL);
 
@@ -9,9 +10,9 @@ use RouterOS\Query;
 
 $client = new Client([
     'timeout' => 1,
-    'host'    => 'Mikrotik IP',
-    'user'    => 'admin',
-    'pass'    => 'password'
+    'host'    => $_SESSION['MK_IP'],
+    'user'    => $_SESSION['MK_USER'],
+    'pass'    => $_SESSION['MK_PASSWORD']
 ]);
 
 /*
@@ -78,16 +79,5 @@ if($arr>0){
 	$stmt=$con->prepare($query);
 	$stmt->execute();
 }
-/*
-//print_r($arr);
-$res=json_encode(array_filter($arr));
-//$res2=json_encode(array("uno","dos","tres","cuatro","cinco","seis","siete"));
-//echo $res2;
-//print_r($res);
-//echo $res;
-//exec("echo ".$res." > /var/www/html/wifi2.txt");
-$file = fopen("/var/www/html/wifi2.txt", "w");
-fwrite($file, $res);
-fclose($file);
-*/
 print_r($ARRAY);
+echo "\n";

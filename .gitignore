@@ -1,0 +1,6 @@
+.env
+Server/.env
+vendor/
+vendor/*
+Server/vendor/
+Server/vendor/*
