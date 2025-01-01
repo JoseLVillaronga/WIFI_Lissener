@@ -54,11 +54,12 @@ WiFi monitoring system that uses a dual-band Mikrotik router to scan and collect
 
 4. Copy server files:
    ```bash
+   mkdir /var/www
+   mkdir /var/www/html
    cp -r Server/* /var/www/html/
    cp Server/root/* /root/
-   cd Server
+   cd /var/www/html/
    composer update
-   cd ..
    ```
 
 5. Configure database credentials:
