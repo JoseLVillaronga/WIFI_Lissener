@@ -44,7 +44,7 @@ WiFi monitoring system that uses a dual-band Mikrotik router to scan and collect
 2. Install system dependencies:
    ```bash
    apt update
-   apt install php mysql-server daemonize
+   apt install php mysql-server daemonize composer
    ```
 
 3. Configure the database:
@@ -56,6 +56,9 @@ WiFi monitoring system that uses a dual-band Mikrotik router to scan and collect
    ```bash
    cp -r Server/* /var/www/html/
    cp Server/root/* /root/
+   cd Server
+   composer update
+   cd ..
    ```
 
 5. Configure database credentials:
